@@ -14,19 +14,21 @@ FORM_LIST?.addEventListener("submit", async (event) => {
         }
     });
 
-    email.value = '';
+    if (!response.status == 404){
+        email.value = '';
 
-    let temp = MODAL.textContent;
-    let thank_text = "Thank you!"
-    
-    MODAL.innerHTML = thank_text;
-    email.disabled = true;
-    btn.disabled = true;
-    btn.style.cursor = "auto";
+        let temp = MODAL.textContent;
+        let thank_text = "Thank you!"
+        
+        MODAL.innerHTML = thank_text;
+        email.disabled = true;
+        btn.disabled = true;
+        btn.style.cursor = "auto";
 
-    setTimeout(() => {
-        MODAL.innerHTML = temp;
-    }, 2000);
+        setTimeout(() => {
+            MODAL.innerHTML = temp;
+        }, 2000);
 
-    email.placeholder = thank_text;
+        email.placeholder = thank_text;
+    }
 }); 
